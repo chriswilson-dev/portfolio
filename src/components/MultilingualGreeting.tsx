@@ -1,16 +1,5 @@
 import { useState, useEffect } from "react";
-
-const greetings = [
-  { text: "Hello, I'm Vivek", lang: "English" },
-  { text: "Hallo, ich bin Vivek", lang: "German" },
-  { text: "Ciao, sono Vivek", lang: "Italian" },
-  { text: "Hola, soy Vivek", lang: "Spanish" },
-  { text: "Bonjour, je suis Vivek", lang: "French" },
-  { text: "こんにちは、私は Vivek です", lang: "Japanese" },
-  { text: "Привет, меня зовут Вивек", lang: "Russian" },
-  { text: "你好，我是 Vivek", lang: "Chinese" },
-  { text: "שלום אני ויווק", lang: "Hebrew" },
-];
+import { greetings } from "@/config/content";
 
 const MultilingualGreeting = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,11 +8,11 @@ const MultilingualGreeting = () => {
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
-    let typingTimer: NodeJS.Timeout;
-    let pauseTimer: NodeJS.Timeout;
-    
+    let typingTimer: ReturnType<typeof setTimeout>;
+    let pauseTimer: ReturnType<typeof setTimeout>;
+
     const currentGreeting = greetings[currentIndex].text;
-    
+
     if (isTyping) {
       // Typing animation
       if (displayText.length < currentGreeting.length) {
@@ -58,7 +47,7 @@ const MultilingualGreeting = () => {
   // Cursor blinking animation
   useEffect(() => {
     const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
+      setShowCursor((prev) => !prev);
     }, 500);
 
     return () => clearInterval(cursorInterval);
@@ -68,9 +57,9 @@ const MultilingualGreeting = () => {
     <div className="inline-block min-w-[300px] md:min-w-[500px]">
       <span className="gradient-text text-3xl md:text-5xl lg:text-6xl font-bold">
         {displayText}
-        <span 
+        <span
           className={`inline-block w-1 h-8 md:h-12 lg:h-14 bg-primary ml-1 transition-opacity duration-100 ${
-            showCursor ? 'opacity-100' : 'opacity-0'
+            showCursor ? "opacity-100" : "opacity-0"
           }`}
         />
       </span>

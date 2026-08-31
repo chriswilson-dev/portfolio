@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
+import { navItems, personal } from "@/config/content";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,14 +17,12 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Service", href: "#services" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Blog", href: "#blog" },
-  ];
+  // Initials as a placeholder logo until you add your own image.
+  const initials = personal.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
 
   return (
     <nav
@@ -33,8 +32,10 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-bold">
-            <img src="/IMG_3156.png" alt="Vivek Choudhary" className="w-12 h-12 rounded-full" />
+          <a href="#" className="text-xl font-bold" aria-label={personal.name}>
+            <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <span className="gradient-text text-base font-bold">{initials}</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
@@ -60,6 +61,7 @@ const Navigation = () => {
             <button
               className="text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

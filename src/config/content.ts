@@ -17,7 +17,7 @@
 import {
   Code, Brain, Database, Cloud, Wrench, Monitor,
   Layout, Link as LinkIcon, Rocket, Bot, Upload,
-  Users, Lightbulb, Zap,
+  Users, Lightbulb, Zap, Server, GitBranch, Layers, Boxes,
 } from "lucide-react";
 
 import {
@@ -110,9 +110,9 @@ export const about = {
   tagline: "Turning messy financial data into systems people can trust.",
 
   education: {
-    degree: "TODO — e.g. B.Tech in Computer Science",
-    institution: "TODO — your college",
-    detail: "TODO — graduation year, and GPA only if you want it public",
+    degree: "B.Tech in Computer Science & Engineering",
+    institution: "Kalinga Institute of Industrial Technology",
+    detail: "Class of 2026",
   },
 
   /** 2–3 paragraphs. Replace with your own story — this is a first draft. */
@@ -128,9 +128,11 @@ export const about = {
       "moving from analysis into building — DSA daily, backend fundamentals, and " +
       "high- and low-level system design.",
 
-    "TODO — one paragraph about you outside of work. Interests, what you read, " +
-      "what you tinker with. This is the paragraph that makes you a person " +
-      "instead of a résumé.",
+    "Outside of work I have no genre loyalty whatsoever — my music library is " +
+      "a crime scene, and I defend it. Same with sport: give me a scoreboard " +
+      "and I'll watch, then confidently explain rules I learned nine minutes " +
+      "ago. I'm the one who says yes to the trip, the detour, and the " +
+      "conversation with a stranger that runs two hours long.",
   ],
 
   workValues: [
@@ -171,31 +173,37 @@ export const about = {
    */
   whyHireMe: [
     {
-      title: "TODO — a result you actually delivered",
+      title: "I've replaced manual bank processes with governed automation",
       description:
-        "TODO — What did you build or automate at Osfin? What changed as a result? " +
-        "Real numbers if you have them (rows processed, hours saved, error rate). " +
-        "If you don't have a metric, describe the before-and-after honestly.",
+        "At IDFC Bank I automated a reconciliation process that was manual, slow, " +
+        "and error-prone — rebuilding it so fund movement is governed by RBI audit " +
+        "rules. Getting the logic right meant working directly with both the client " +
+        "and IDFC. The result removes risk from a bank's books, not just hours from " +
+        "someone's week.",
     },
     {
-      title: "TODO — evidence you are ready for SDE work",
+      title: "I build things that need the same thinking DSA rounds test",
       description:
-        "TODO — DSA consistency, system design practice, a design doc you wrote, " +
-        "something you shipped end to end. Concrete beats enthusiastic.",
+        "EazzyPay wasn't a payment API wired to a button. Its flow needed real " +
+        "decisions about state handling and failure safety — the cases that only " +
+        "show up when money is involved. I practise algorithms daily, but the " +
+        "instincts come from shipping things that have to actually hold.",
     },
     {
-      title: "TODO — how you work with other people",
+      title: "I stay with a problem until the real cause is fixed",
       description:
-        "TODO — A time you worked across teams, unblocked someone, or handled a " +
-        "production issue with others. Specific incident, not a personality claim.",
+        "During a live outage I traced a TLS failure down to a misconfigured " +
+        "backend config — the kind of bug that's easy to misdiagnose if you stop " +
+        "at the surface error. Under pressure, with people waiting, I'd rather " +
+        "find the cause than clear the symptom.",
     },
   ],
 
   /** ⚠️ Set these to real counts. An inflated stat is the first thing a reviewer checks. */
   stats: [
-    { number: "TODO", label: "Projects Shipped" },
-    { number: "TODO", label: "Years Experience" },
-    { number: "TODO", label: "Technologies Used" },
+    { number: "4", label: "Projects Shipped" },
+    { number: "1+", label: "Years Experience" },
+    { number: "30+", label: "Technologies Used" },
   ],
 };
 
@@ -204,76 +212,76 @@ export const about = {
  * ========================================================================== */
 
 export const servicesSection = {
-  rotatingWords: ["Reliable", "Scalable", "Auditable", "Automated"],
-  headingSuffix: "Data & Backend Systems",
+  rotatingWords: ["Reliable", "Scalable", "Automated", "Production-Ready"],
+  headingSuffix: "Software & Systems",
   subheading:
-    "Building pipelines and services that move financial data accurately, at volume, without manual intervention.",
+    "Backend services, data pipelines, automation, and the tooling that keeps it all running.",
 };
 
 const SERVICE_COLOR = "bg-purple-500/10 text-purple-500 border-purple-500/20";
 
 export const services = [
   {
+    icon: Server,
+    title: "Backend & API Development",
+    description:
+      "REST services in Python and Node with clear boundaries, real validation, and error handling that fails loudly instead of quietly.",
+    color: SERVICE_COLOR,
+  },
+  {
     icon: Database,
     title: "Data Pipeline Engineering",
     description:
-      "Design and build ingestion pipelines that parse, validate, and load high-volume files into relational stores reliably.",
+      "Ingestion pipelines that parse, validate, and load high-volume data reliably — and tell you when something looks wrong.",
     color: SERVICE_COLOR,
   },
   {
-    icon: Zap,
-    title: "Reconciliation Automation",
+    icon: GitBranch,
+    title: "CI/CD & DevOps",
     description:
-      "Automate matching between transaction sources and ledgers, with exception handling and clear audit trails.",
+      "Automated build, test, and deploy pipelines with Jenkins and GitHub Actions, so shipping stops being an event.",
     color: SERVICE_COLOR,
   },
   {
-    icon: Code,
-    title: "SQL & Database Work",
+    icon: Bot,
+    title: "Chatbots & AI Integration",
     description:
-      "Stored procedures, query optimisation, and schema design across Oracle, PostgreSQL, and MySQL.",
+      "Conversational interfaces and LLM-backed features wired into real products, with sensible fallbacks when the model gets it wrong.",
     color: SERVICE_COLOR,
   },
   {
-    icon: LinkIcon,
-    title: "Backend & REST APIs",
+    icon: Layers,
+    title: "Database Design & Tuning",
     description:
-      "Server-side services in Python and Node with sensible boundaries, validation, and error handling.",
+      "Schema design, stored procedures, and query optimisation across Oracle, PostgreSQL, and MySQL.",
+    color: SERVICE_COLOR,
+  },
+  {
+    icon: Layout,
+    title: "Full-Stack Web Apps",
+    description:
+      "End-to-end applications with React frontends and Python or Node backends, built to be handed over and maintained.",
+    color: SERVICE_COLOR,
+  },
+  {
+    icon: Boxes,
+    title: "System Design",
+    description:
+      "High- and low-level design for services that need to survive real traffic, real failure, and real change.",
     color: SERVICE_COLOR,
   },
   {
     icon: Rocket,
     title: "Performance Optimisation",
     description:
-      "Profiling slow jobs and queries, then fixing the actual bottleneck rather than the obvious one.",
+      "Profiling slow jobs and queries, then fixing the actual bottleneck rather than the most obvious one.",
     color: SERVICE_COLOR,
   },
   {
-    icon: Layout,
-    title: "Internal Tooling",
+    icon: Cloud,
+    title: "Cloud & Deployment",
     description:
-      "Dashboards and small full-stack apps that give operations teams visibility without asking an engineer.",
-    color: SERVICE_COLOR,
-  },
-  {
-    icon: Bot,
-    title: "Scripting & Automation",
-    description:
-      "Python and Bash tooling that removes recurring manual work from day-to-day operations.",
-    color: SERVICE_COLOR,
-  },
-  {
-    icon: Monitor,
-    title: "Data Quality & Validation",
-    description:
-      "Checks and reconciliation logic that surface bad data early instead of letting it settle into reports.",
-    color: SERVICE_COLOR,
-  },
-  {
-    icon: Upload,
-    title: "Deployment & Monitoring",
-    description:
-      "Getting jobs into production and keeping them observable, with alerting that means something.",
+      "Getting services into production on AWS with Docker, and keeping them observable once they're there.",
     color: SERVICE_COLOR,
   },
 ];

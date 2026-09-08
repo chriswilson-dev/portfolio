@@ -358,7 +358,7 @@ export const projects = [
       "Canvas API", "EmailJS", "Vercel", "Git",
     ],
     github: "https://github.com/chriswilson-dev/portfolio",
-    liveUrl: "https://eazzypay.vercel.app/",
+    liveUrl: "https://chriswilson-dev.vercel.app/",
     period: "2025-2026",
   },
   {
@@ -377,7 +377,7 @@ export const projects = [
       "Tailwind CSS", "shadcn/ui",
     ],
     github: "https://github.com/chriswilson-dev",
-    liveUrl: "https://chriswilson-dev.vercel.app/",
+    liveUrl: "https://eazzypay.vercel.app/",
     period: "Nov 2025",
   },
 ];

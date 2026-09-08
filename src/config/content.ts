@@ -21,13 +21,12 @@ import {
 } from "lucide-react";
 
 import {
-  Python, CPlusPlus, JavaScript, TypeScript, Bash,
-  NodeJs, ExpressJsDark, ExpressJsLight, React, TailwindCSS,
-  Angular, Bootstrap5, FlaskDark, FlaskLight,
-  Oracle, PostgreSQL, MySQL, MongoDB, Redis,
-  AWS, Jenkins, Docker, Apache, Linux,
-  Git, GitHubDark, GitHubLight, GitLab, Bitbucket,
-  Postman, VisualStudioCode, Kafka, NumPy,
+  Python, JavaScript, TypeScript, Java, CPlusPlus, MySQL,
+  ClaudeAI, HuggingFace, Tensorflow, PyTorch, NumPy,
+  React, VueJs, NextJs, Spring, Django, FastAPI, NodeJs,
+  TailwindCSS, HTML5,
+  Oracle, PostgreSQL, MongoDB, Redis,
+  Git, AWS, Docker, Jenkins, Linux, Postman, VisualStudioCode,
 } from "developer-icons";
 
 /* ── Icons handled per-theme in the component. Keep these strings as-is. ── */
@@ -99,7 +98,6 @@ export const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Blog", href: "#blog" },
 ];
 
 /* ==========================================================================
@@ -292,24 +290,47 @@ export const services = [
 
 export const experienceSection = {
   subheading:
-    "Building automated financial data systems, and moving deliberately toward backend engineering.",
+    "Automating reconciliation and fund movement for banks and payment aggregators — from PL/SQL and APIs through to deployment.",
 };
 
 export const experiences = [
   {
-    title: "TODO — your exact job title at Osfin.ai",
+    title: "Data Analyst 1",
     company: "Osfin.ai",
-    period: "TODO — e.g. Jun 2025 – Present",
-    location: "TODO — City, Country",
-    logo: "/osfin_logo.png", // TODO: save the logo into /public
+    period: "Aug 2026 – Present",
+    location: "Navi Mumbai, India",
+    logo: "/osfin_logo.png",
     achievements: [
-      "TODO — What do you build? Be specific: which pipelines, which systems, what scale.",
-      "TODO — A problem you solved and what improved because of it.",
-      "TODO — Something you automated, optimised, or fixed. Real numbers if you have them.",
+      "Built automated reconciliation and live fund movement for IDFC Bank across payment aggregators including Paytm, PayU, Razorpay, and BillDesk",
+      "Owned the full technical stack end to end — PL/SQL procedures, REST API integrations, LDAP authentication, and production deployment",
+      "Integrated Claude-powered chatbot capability into the platform to let operations teams query reconciliation status without engineering support",
+      "Diagnosed and resolved a live TLS failure by tracing it to a misconfigured backend service rather than stopping at the surface error",
+      "Worked directly with client and bank stakeholders to translate settlement requirements into working reconciliation logic",
     ],
-    technologies: ["Python", "SQL", "Oracle", "Data Pipelines", "Bash"],
+    technologies: [
+      "PL/SQL", "Oracle", "Python", "REST APIs", "Node.js", "React",
+      "JavaScript", "LDAP", "Linux", "Docker", "Jenkins", "Nginx",
+      "Git", "Claude API", "Bash", "Shell Scripting",
+    ],
   },
-  // TODO: add earlier roles or internships here in the same shape, newest first.
+  {
+    title: "Data Analyst Intern",
+    company: "Osfin.ai",
+    period: "Aug 2025 – Jul 2026",
+    location: "Navi Mumbai, India",
+    logo: "/osfin_logo.png",
+    achievements: [
+      "Configured SWIFT and NEFT/RTGS reconciliation automation for IDFC Bank on the Osfin platform, replacing a manual process governed by RBI audit rules",
+      "Reached 83% automation with 100% match accuracy, cutting processing time by roughly 90%",
+      "Delivered 50+ operational reports and 20+ dashboards used by bank and internal teams to monitor settlement health",
+      "Mapped GL codes and built transformation logic to split high-volume network settlement files into reconcilable data tables",
+    ],
+    technologies: [
+      "Python", "SQL", "PL/SQL", "Oracle", "Pandas", "NumPy",
+      "ETL Pipelines", "Data Visualisation", "Excel",
+      "SWIFT", "NEFT/RTGS", "Reconciliation",
+    ],
+  },
 ];
 
 /* ==========================================================================
@@ -318,40 +339,47 @@ export const experiences = [
 
 export const projectsSection = {
   subheading:
-    "Backend services, data tooling, and full-stack apps built to practise real engineering problems.",
+    "Things I've built end to end — and the one you're looking at right now.",
 };
 
-/**
- * ⚠️  This array is intentionally EMPTY.
- *
- *  Your GitHub currently has one repo (your profile README). For an SDE
- *  portfolio, Projects is the section reviewers open first — an empty grid
- *  reads better than three padded entries.
- *
- *  Copy the template below once you have something to show. Even a small,
- *  finished, well-documented project beats an ambitious unfinished one.
- */
-export const projects: Array<{
-  title: string;
-  description: string;
-  achievements: string[];
-  technologies: string[];
-  github: string;
-  liveUrl?: string;
-  period: string;
-}> = [
-  // {
-  //   title: "Project Name",
-  //   description: "One or two sentences: what it does and what problem it solves.",
-  //   achievements: [
-  //     "A specific technical decision you made and why",
-  //     "A measurable outcome, if there is one",
-  //   ],
-  //   technologies: ["Python", "PostgreSQL", "Docker"],
-  //   github: "https://github.com/chriswilson-dev/project-name",
-  //   liveUrl: "https://project.vercel.app",
-  //   period: "Mar 2026",
-  // },
+export const projects = [
+  {
+    title: "Personal Portfolio Website",
+    description:
+      "This site. A single-page React application built from scratch with a centralised content architecture, dual animated canvas backgrounds, and a full dark/light theme system.",
+    achievements: [
+      "Built a config-driven architecture where all content lives in one typed file, so copy changes never require touching a component",
+      "Implemented two canvas particle animation systems that swap on theme change, with cleanup on unmount to avoid memory leaks",
+      "Wired a working contact form through EmailJS with client-side validation and toast feedback",
+      "Fully responsive down to mobile, with a collapsible nav and reflowing section grids",
+    ],
+    technologies: [
+      "React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui",
+      "Canvas API", "EmailJS", "Vercel", "Git",
+    ],
+    github: "https://github.com/chriswilson-dev/portfolio",
+    liveUrl: "https://eazzypay.vercel.app/",
+    period: "2025-2026",
+  },
+  {
+    title: "EazyPay",
+    description:
+      "A team of six built a web app that sends USDC stablecoin to a phone number — no seed phrase, no wallet install, no gas fees for the recipient. I owned the backend and database layer.",
+    achievements: [
+      "Designed the PostgreSQL schema on Supabase mapping phone numbers to wallet addresses, and wrote the API logic to log transaction history securely",
+      "Built the persistence layer that keeps a transaction record independent of the blockchain, so history survives independently of chain state",
+      "Worked within a decoupled architecture: Next.js frontend, Privy for account abstraction, Twilio for SMS, Sepolia testnet as the ledger",
+      "Final-year project at KIIT under Prof. Nachiketa Tarasia; all three end-to-end test cases passed",
+    ],
+    technologies: [
+      "Supabase", "PostgreSQL", "REST APIs", "Next.js", "TypeScript",
+      "Privy", "Twilio API", "Account Abstraction", "Sepolia Testnet",
+      "Tailwind CSS", "shadcn/ui",
+    ],
+    github: "https://github.com/chriswilson-dev",
+    liveUrl: "TODO — live URL, or delete this line to hide the icon",
+    period: "Nov 2025",
+  },
 ];
 
 /* ==========================================================================
@@ -372,39 +400,45 @@ export const skillCategories = [
     icon: Code,
     color: "bg-blue-500/10 text-blue-500 border-blue-500/20",
     skills: [
-      { name: "Python", icon: Python, experience: "TODO", description: "Pipelines, automation, scripting" },
-      { name: "SQL", icon: Oracle, experience: "TODO", description: "Queries, stored procedures, tuning" },
-      { name: "C++", icon: CPlusPlus, experience: "TODO", description: "DSA and problem solving" },
-      { name: "JavaScript", icon: JavaScript, experience: "TODO", description: "Full-stack side projects" },
-      { name: "TypeScript", icon: TypeScript, experience: "TODO", description: "Typed frontend work" },
-      { name: "Bash", icon: Bash, experience: "TODO", description: "Job scripting, server tasks" },
+      { name: "Python", icon: Python, experience: "2y+", description: "Automation, pipelines, APIs" },
+      { name: "SQL", icon: MySQL, experience: "2y+", description: "Queries, procedures, tuning" },
+      { name: "JavaScript", icon: JavaScript, experience: "1y+", description: "Full-stack web development" },
+      { name: "TypeScript", icon: TypeScript, experience: "1y+", description: "Typed React applications" },
+      { name: "Java", icon: Java, experience: "1y+", description: "Spring Boot, OOP" },
+      { name: "C++", icon: CPlusPlus, experience: "1y+", description: "DSA, systems programming" },
     ],
   },
   {
-    title: "Data Engineering",
+    title: "AI/ML Technologies",
     icon: Brain,
     color: "bg-purple-500/10 text-purple-500 border-purple-500/20",
     skills: [
-      { name: "Apache Spark", icon: "⚡", experience: "TODO", description: "Distributed data processing" },
-      { name: "Apache Kafka", icon: Kafka, experience: "TODO", description: "Event streaming" },
-      { name: "Pandas", icon: "🐼", experience: "TODO", description: "Data manipulation and analysis" },
-      { name: "NumPy", icon: NumPy, experience: "TODO", description: "Numerical computing" },
-      { name: "ETL Pipelines", icon: "🔄", experience: "TODO", description: "Ingestion, transform, load" },
-      { name: "Reconciliation", icon: "⚖️", experience: "TODO", description: "Financial matching systems" },
+      { name: "Claude API", icon: ClaudeAI, experience: "Current", description: "LLM integration, chatbots" },
+      { name: "LangChain", icon: "🦜", experience: "Current", description: "RAG systems, AI agents" },
+      { name: "HuggingFace", icon: HuggingFace, experience: "Current", description: "Transformers, NLP models" },
+      { name: "OpenCV", icon: "👁️", experience: "Current", description: "Computer vision, image processing" },
+      { name: "MediaPipe", icon: "🖐️", experience: "Current", description: "Hand and pose tracking" },
+      { name: "TensorFlow", icon: Tensorflow, experience: "Current", description: "Model training, inference" },
+      { name: "PyTorch", icon: PyTorch, experience: "Current", description: "Deep learning" },
+      { name: "Pandas", icon: "🐼", experience: "1y+", description: "Data manipulation, analysis" },
+      { name: "NumPy", icon: NumPy, experience: "1y+", description: "Numerical computing" },
     ],
   },
   {
-    title: "Backend & Web",
+    title: "Web Technologies & Frameworks",
     icon: Monitor,
     color: "bg-green-500/10 text-green-500 border-green-500/20",
     skills: [
-      { name: "Node.js", icon: NodeJs, experience: "TODO", description: "Server-side JavaScript" },
-      { name: "Express.js", icon: THEMED.express, experience: "TODO", description: "REST APIs" },
-      { name: "Flask", icon: THEMED.flask, experience: "TODO", description: "Lightweight Python services" },
-      { name: "React", icon: React, experience: "TODO", description: "Component-based UIs" },
-      { name: "Angular", icon: Angular, experience: "TODO", description: "Enterprise frontends" },
-      { name: "Tailwind CSS", icon: TailwindCSS, experience: "TODO", description: "Utility-first styling" },
-      { name: "Bootstrap", icon: Bootstrap5, experience: "TODO", description: "Responsive layouts" },
+      { name: "React.js", icon: React, experience: "2y+", description: "SPAs, component libraries" },
+      { name: "HTML/CSS", icon: HTML5, experience: "2y+", description: "Responsive design" },
+      { name: "Flask", icon: THEMED.flask, experience: "2y+", description: "Lightweight Python APIs" },
+      { name: "Next.js", icon: NextJs, experience: "1y+", description: "SSR, file-based routing" },
+      { name: "Vue.js", icon: VueJs, experience: "1y+", description: "Progressive web apps" },
+      { name: "Node.js", icon: NodeJs, experience: "1y+", description: "Server-side JavaScript" },
+      { name: "FastAPI", icon: FastAPI, experience: "1y+", description: "High-performance APIs" },
+      { name: "Django", icon: Django, experience: "1y+", description: "Web apps, admin panels" },
+      { name: "Spring Boot", icon: Spring, experience: "1y+", description: "Enterprise Java apps" },
+      { name: "Tailwind CSS", icon: TailwindCSS, experience: "1y+", description: "Utility-first styling" },
     ],
   },
   {
@@ -412,69 +446,51 @@ export const skillCategories = [
     icon: Database,
     color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20",
     skills: [
-      { name: "Oracle", icon: Oracle, experience: "TODO", description: "Production banking systems" },
-      { name: "PostgreSQL", icon: PostgreSQL, experience: "TODO", description: "Relational modelling" },
-      { name: "MySQL", icon: MySQL, experience: "TODO", description: "Application databases" },
-      { name: "MongoDB", icon: MongoDB, experience: "TODO", description: "Document stores" },
-      { name: "Redis", icon: Redis, experience: "TODO", description: "Caching, fast lookups" },
+      { name: "Oracle", icon: Oracle, experience: "2y+", description: "Production banking systems" },
+      { name: "PostgreSQL", icon: PostgreSQL, experience: "2y+", description: "Relational databases" },
+      { name: "MySQL", icon: MySQL, experience: "2y+", description: "Database management" },
+      { name: "MongoDB", icon: MongoDB, experience: "1y+", description: "NoSQL databases" },
+      { name: "Redis", icon: Redis, experience: "1y+", description: "Caching, fast lookups" },
     ],
   },
   {
-    title: "Cloud & Infrastructure",
+    title: "Tools & Cloud",
     icon: Cloud,
     color: "bg-orange-500/10 text-orange-500 border-orange-500/20",
     skills: [
-      { name: "AWS", icon: AWS, experience: "TODO", description: "Cloud services" },
-      { name: "Docker", icon: Docker, experience: "TODO", description: "Containerisation" },
-      { name: "Jenkins", icon: Jenkins, experience: "TODO", description: "CI/CD pipelines" },
-      { name: "Nginx", icon: "🌐", experience: "TODO", description: "Reverse proxy, serving" },
-      { name: "Apache", icon: Apache, experience: "TODO", description: "Web server config" },
-      { name: "Linux", icon: Linux, experience: "TODO", description: "Shell, server administration" },
+      { name: "Git", icon: Git, experience: "1y+", description: "Version control" },
+      { name: "GitHub", icon: THEMED.github, experience: "1y+", description: "Repos, collaboration" },
+      { name: "AWS", icon: AWS, experience: "Current", description: "Cloud services" },
+      { name: "Docker", icon: Docker, experience: "1y+", description: "Containerisation" },
+      { name: "Jenkins", icon: Jenkins, experience: "1y+", description: "CI/CD pipelines" },
+      { name: "Linux", icon: Linux, experience: "1y+", description: "Terminal, system administration" },
+      { name: "Postman", icon: Postman, experience: "1y+", description: "API testing" },
     ],
   },
   {
-    title: "Tools & Version Control",
+    title: "Development Environments",
     icon: Wrench,
     color: "bg-pink-500/10 text-pink-500 border-pink-500/20",
     skills: [
-      { name: "Git", icon: Git, experience: "TODO", description: "Version control" },
-      { name: "GitHub", icon: THEMED.github, experience: "TODO", description: "Repos, Actions" },
-      { name: "GitLab", icon: GitLab, experience: "TODO", description: "CI and repo hosting" },
-      { name: "Bitbucket", icon: Bitbucket, experience: "TODO", description: "Team repositories" },
-      { name: "Postman", icon: Postman, experience: "TODO", description: "API testing" },
-      { name: "VS Code", icon: VisualStudioCode, experience: "TODO", description: "Primary editor" },
+      { name: "VS Code", icon: VisualStudioCode, experience: "3y+", description: "Primary editor" },
+      { name: "IntelliJ IDEA", icon: "💡", experience: "2y+", description: "Java development" },
+      { name: "PyCharm", icon: "🐍", experience: "1y+", description: "Python development" },
+      { name: "Visual Studio", icon: "🔷", experience: "1y+", description: ".NET development" },
     ],
   },
 ];
 
-/** ⚠️ Recount these once your skills list is final. */
 export const summaryStats = [
-  { icon: Code, count: "6", label: "Languages" },
-  { icon: Brain, count: "6", label: "Data Tools" },
-  { icon: Database, count: "12", label: "Frameworks & DBs" },
-  { icon: Cloud, count: "6", label: "Infra & Cloud" },
+  { icon: Code, count: "6+", label: "Languages" },
+  { icon: Brain, count: "9+", label: "AI/ML Tools" },
+  { icon: Monitor, count: "10+", label: "Dev Frameworks" },
+  { icon: Cloud, count: "7+", label: "Cloud & Tools" },
 ];
 
 /* ==========================================================================
  * 9. BLOG
  * ========================================================================== */
 
-export const blogSection = {
-  /** Set to false to hide the whole Blog section until you have written something. */
-  enabled: false,
-
-  subheading:
-    "Notes on data engineering, backend fundamentals, and moving from analysis into software engineering.",
-
-  post: {
-    title: "TODO — post title",
-    excerpt: "TODO — two or three sentences from the opening.",
-    publishedDate: "TODO",
-    readTime: "TODO",
-    url: "TODO — full post URL",
-    tags: ["TODO"],
-  },
-};
 
 /* ==========================================================================
  * 10. CONTACT & FOOTER
@@ -484,7 +500,14 @@ export const contact = {
   heading: "Get In Touch",
   subheading:
     "Open to SDE and backend roles, and happy to talk about data pipelines, reconciliation systems, or system design.",
-  availability: "Open to opportunities",
+
+  email: "chriswilson2004.work@gmail.com",
+  phone: "+91 77559 26899",
+  phoneHref: "tel:+917755926899",
+  location: "Navi Mumbai, Maharashtra, India",
+
+  /** Set to "" to hide the Schedule a Call button. */
+  calendly: "",
 };
 
 /**
@@ -516,7 +539,6 @@ export const footer = {
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Blog", href: "#blog" },
   ],
 };
 

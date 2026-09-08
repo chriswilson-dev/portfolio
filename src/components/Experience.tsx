@@ -1,49 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, Zap, Code } from "lucide-react";
-
-const experiences = [
-  {
-    title: "Graduate Teaching Assistant",
-    company: "Worcester Polytechnic Institute",
-    period: "Aug 2025 – Present",
-    location: "Worcester, Massachusetts, USA",
-    logo: "/WPI_logo.png",
-    achievements: [
-      "Support 35 graduate students in CS-548 Knowledge Discovery and Data Mining coursework through weekly office hours",
-      "Guide students on classification, clustering, regression, and real-world data mining projects",
-      "Assist with complex concepts in machine learning algorithms and practical implementations"
-    ],
-    technologies: ["Python", "Machine Learning", "Data Mining", "Teaching"]
-  },
-  {
-    title: "Full Stack Engineer",
-    company: "Volkswagen Digital Solutions India",
-    period: "Aug 2022 – Nov 2024",
-    location: "Gurgaon, India",
-    logo: "/VW_logo.jpeg",
-    achievements: [
-      "Curtailed production runtime errors by 50% for a Taiwan-based dealer management system serving 100+ dealers by redesigning REST API integrations in Vue.js and React",
-      "Resolved 100+ critical UI, backend, and database bugs through root cause analysis and end-to-end debugging, improving system stability by 40%",
-      "Architected automated multi-language support using PostgreSQL, LINQ, and microservices to localize 250+ text labels",
-      "Coordinated production rollouts for 100+ dealers with a 3-person team, reducing deployment downtime significantly",
-      "Improved billing report generation speed by 30% using DevExpress and optimized database stored procedures"
-    ],
-    technologies: ["Vue.js", "React", "JavaScript", "PostgreSQL", ".NET Core", "Azure DevOps", "Visual Studio", "Git", "DevExpress", "LINQ"]
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "Myridius x Aethereus",
-    period: "Jan 2022 – Mar 2022",
-    location: "Pune, India",
-    logo: "/MxA.jpeg",
-    achievements: [
-      "Minimized manual CRM work by 20% and boosted system reliability by 30% by building 10+ Salesforce triggers and workflows",
-      "Debugged complex Apex code alongside senior engineers to resolve critical system issues"
-    ],
-    technologies: ["Salesforce", "Apex Programming", "CRM", "Salesforce Workflows"]
-  }
-];
+import { experiences, experienceSection } from "@/config/content";
 
 const Experience = () => {
   return (
@@ -53,7 +11,7 @@ const Experience = () => {
           <span className="gradient-text">Professional</span> Journey
         </h2>
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          Built scalable enterprise solutions and driving innovation through full-stack development and artificial intelligence
+          {experienceSection.subheading}
         </p>
 
         <div className="relative">
@@ -72,8 +30,8 @@ const Experience = () => {
                     {/* Header with Logo */}
                     <div className="flex items-start gap-4 mb-4">
                       <div className="flex-shrink-0">
-                        <img 
-                          src={exp.logo} 
+                        <img
+                          src={exp.logo}
                           alt={`${exp.company} logo`}
                           className="w-12 h-12 rounded-lg object-contain bg-white p-1 border border-border"
                         />

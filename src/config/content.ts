@@ -377,7 +377,7 @@ export const projects = [
       "Tailwind CSS", "shadcn/ui",
     ],
     github: "https://github.com/chriswilson-dev",
-    liveUrl: "TODO — live URL, or delete this line to hide the icon",
+    liveUrl: "https://portfolio-kohl-eight-64.vercel.app/",
     period: "Nov 2025",
   },
 ];
@@ -555,5 +555,5 @@ export const seo = {
     "Software Engineer, Backend Engineer, Data Engineer, Python, SQL, Oracle, " +
     "Data Pipelines, Reconciliation, Kafka, Spark, Chris Wilson",
   author: "Chris Wilson",
-  url: "TODO — your Vercel URL once deployed",
+  url: "https://portfolio-kohl-eight-64.vercel.app/",
 };

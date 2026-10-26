@@ -51,8 +51,8 @@ export const personal = {
   intro:
     "I build and automate the systems banks rely on to reconcile money at scale — " +
     "data pipelines in Python and SQL that turn messy financial files into trustworthy, " +
-    "auditable records. Currently deepening my backend engineering and system design " +
-    "foundations as I move from data into software engineering.",
+    "auditable records. As an implementation engineer I take client requirements all the " +
+    "way to production, and I keep deepening my backend and system design foundations.",
 
   location: "TODO — City, Country",
 
@@ -120,11 +120,12 @@ export const about = {
       "transaction data — parsing network settlement files, matching them against " +
       "ledgers, and making sure the numbers agree.",
 
-    "That work pulled me toward engineering. Reconciliation is a systems problem " +
-      "before it is a data problem: throughput, correctness under failure, and " +
-      "designs that survive contact with real production volume. So I have been " +
-      "moving from analysis into building — DSA daily, backend fundamentals, and " +
-      "high- and low-level system design.",
+    "Reconciliation is a systems problem before it is a data problem: throughput, " +
+      "correctness under failure, and designs that survive contact with real " +
+      "production volume. As an implementation engineer I own that path end to end — " +
+      "from a client's requirements to code running in production — and I keep " +
+      "sharpening it with DSA daily, backend fundamentals, and high- and low-level " +
+      "system design.",
 
     "Outside of work I have no genre loyalty whatsoever — my music library is " +
       "a crime scene, and I defend it. Same with sport: give me a scoreboard " +
@@ -295,7 +296,7 @@ export const experienceSection = {
 
 export const experiences = [
   {
-    title: "Data Analyst 1",
+    title: "Implementation Engineer",
     company: "Osfin.ai",
     period: "Aug 2026 – Present",
     location: "Navi Mumbai, India",
@@ -305,7 +306,7 @@ export const experiences = [
       "Owned the full technical stack end to end — PL/SQL procedures, REST API integrations, LDAP authentication, and production deployment",
       "Integrated Claude-powered chatbot capability into the platform to let operations teams query reconciliation status without engineering support",
       "Diagnosed and resolved a live TLS failure by tracing it to a misconfigured backend service rather than stopping at the surface error",
-      "Worked directly with client and bank stakeholders to translate settlement requirements into working reconciliation logic",
+      "Translated client and bank BRDs into FSDs and working reconciliation logic, delivered across two-week sprints tracked in JIRA and Confluence",
     ],
     technologies: [
       "PL/SQL", "Oracle", "Python", "REST APIs", "Node.js", "React",
@@ -314,7 +315,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Data Analyst Intern",
+    title: "Implementation Engineer Intern",
     company: "Osfin.ai",
     period: "Aug 2025 – Jul 2026",
     location: "Navi Mumbai, India",
@@ -322,12 +323,12 @@ export const experiences = [
     achievements: [
       "Configured SWIFT and NEFT/RTGS reconciliation automation for IDFC Bank on the Osfin platform, replacing a manual process governed by RBI audit rules",
       "Reached 83% automation with 100% match accuracy, cutting processing time by roughly 90%",
-      "Delivered 50+ operational reports and 20+ dashboards used by bank and internal teams to monitor settlement health",
+      "Configured 50+ operational reports and 20+ dashboards on the platform, used by bank and internal teams to monitor settlement health",
       "Mapped GL codes and built transformation logic to split high-volume network settlement files into reconcilable data tables",
     ],
     technologies: [
       "Python", "SQL", "PL/SQL", "Oracle", "Pandas", "NumPy",
-      "ETL Pipelines", "Data Visualisation", "Excel",
+      "ETL Pipelines", "JIRA", "Confluence",
       "SWIFT", "NEFT/RTGS", "Reconciliation",
     ],
   },
